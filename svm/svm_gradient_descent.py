@@ -80,6 +80,7 @@ def get_donut():
     return X, Y
 
 
+# rbf kernel
 def rbf(X1, X2, gamma=0):
     a = np.sum(np.square(X1), axis=1)[:, np.newaxis]
     b = np.sum(np.square(X2), axis=1)
@@ -88,6 +89,7 @@ def rbf(X1, X2, gamma=0):
     return np.exp(-gamma * dists)
 
 
+# plot separating hyperplane
 def plot_separating_hyperplane(svmc, x, y):
     xd = np.linspace(x[:, 0].min(), x[:, 0].max())
     yd = np.linspace(x[:, 1].min(), x[:, 1].max())
